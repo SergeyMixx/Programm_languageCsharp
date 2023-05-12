@@ -8,8 +8,6 @@ bool polindr (int number)
 {
 int numberFirstTwo = number / 1000;
 int numberLastTwo = number % 10 * 10 + number / 10 % 10;
-
 if (numberFirstTwo == numberLastTwo) return true;
-
 else return false;
 }

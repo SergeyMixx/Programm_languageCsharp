@@ -13,9 +13,13 @@ Console.WriteLine($"Произведение чисел от 1 до {number} = {
 int MultNumbers(int num)
 {
     int mult = 1;
-    for (int i = 1; i <= num; i++)
+    if (num == 0) return 0;
+    else
     {
-        mult = mult * i;
+        for (int i = 1; i <= num; i++)
+        {
+            mult = mult * i;
+        }
+        return mult;
     }
-    return mult;
 }

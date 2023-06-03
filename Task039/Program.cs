@@ -18,7 +18,7 @@ void PrintArray(int[] arr, string sep = ",")
     }
 }
 
-void ReverseArray(int[] arr)    //создаем свой метот, хотя есть встроенный Array.Reverse(array); 
+void ReverseArray(int[] arr)    //создаем свой метод, хотя есть встроенный Array.Reverse(array); 
 {
     for (int i = 0; i < arr.Length / 2; i++)
     {

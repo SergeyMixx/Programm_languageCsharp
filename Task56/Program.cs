@@ -14,29 +14,36 @@
 
 int[] SearchMinSumRow(int[,] matr)
 {
-    int indMaxRow = 0;
+    int indMinRow = 0;
     int[] arr = new int[matr.GetLength(1)];
-    int maxRow = 0;
+    int minRowSum = 0;
+    for (int k = 0; k < matr.GetLength(1); k++)
+    {
+        minRowSum = minRowSum + matr[0, k];
+    }
+
     for (int i = 0; i < matr.GetLength(0); i++)
     {
-        
         int rowSum = 0;
         for (int j = 0; j < matr.GetLength(1); j++)
         {
             rowSum = rowSum + matr[i, j];
         }
-        if (rowSum > maxRow)
+
+        if (rowSum < minRowSum)
         {
-            maxRow = rowSum;
-            indMaxRow = i;
+            minRowSum = rowSum;
+            indMinRow = i;
         }
     }
+    Console.WriteLine($"Номер строки с минимальной суммой элементов: {indMinRow+1}");
+
     for (int j = 0; j < matr.GetLength(1); j++)
     {
-        arr[j] = matr[indMaxRow, j];
+        arr[j] = matr[indMinRow, j];
     }
     return arr;
-    //Console.WriteLine($"Номер строки с максимальной суммой элементов: {indMaxRow}")
+    //Console.WriteLine($"Номер строки с минимальной суммой элементов: {indMinRow}");
 }
 
 void PrintMatrix(int[,] matrix)
@@ -55,12 +62,12 @@ void PrintArray(int[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write($"{arr[i],3} ");        
+        Console.Write($"{arr[i],3} ");
     }
 }
 
 int[,] array2D = CreateMatrixRndInt(4, 4, 0, 10);
 PrintMatrix(array2D);
 int[] res = SearchMinSumRow(array2D);
-Console.WriteLine("Строка с максимальной суммой элементов:");
+Console.WriteLine("Строка с минимальной суммой элементов:");
 PrintArray(res);

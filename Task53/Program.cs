@@ -39,7 +39,7 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int[,] array2D = CreateMatrixRndInt(3, 3, 0, 10);
+int[,] array2D = CreateMatrixRndInt(4, 4, 0, 10);
 PrintMatrix(array2D);
 ChangeFirstLastRow(array2D);
 Console.WriteLine("Array with changed rows:");

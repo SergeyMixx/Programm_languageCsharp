@@ -9,3 +9,4 @@ void NaturalNumbers(int num)
     NaturalNumbers(num -1);
     Console.Write($"{num} ");
 }
+
